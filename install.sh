@@ -42,14 +42,14 @@ echo "==========================================================================
 sed -i 's/prohibit-password/yes/' /etc/ssh/sshd_config
 cd /
 echo "=================================================================================="
-echo "Downloading the Latest SimpNAS from GIT repo..."
+echo "Downloading the Latest easynas from GIT repo..."
 echo "=================================================================================="
-git clone https://github.com/johnnyq/simpnas.git
+git clone https://github.com/gurukewl/easynas.git
 echo "=================================================================================="
 echo "Setting up Samba configuration"
 echo "=================================================================================="
 mv /etc/samba/smb.conf /etc/samba/smb.conf.ori
-cp /simpnas/conf/smb.conf /etc/samba/
+cp /easynas/conf/smb.conf /etc/samba/
 touch /etc/samba/shares.conf
 mkdir /etc/samba/shares
 echo "=================================================================================="
@@ -60,18 +60,18 @@ echo "==========================================================================
 echo "Installing and Enabling Filebrowser..."
 echo "=================================================================================="
 cd /usr/local/etc
-curl -fsSL https://filebrowser.org/get.sh | bash
-cp /simpnas/conf/filebrowser.service /etc/systemd/system/
+curl -fsSL https://raw.githubusercontent.com/filebrowser/get/master/get.sh | bash
+cp /easynas/conf/filebrowser.service /etc/systemd/system/
 chmod 755 /etc/systemd/system/filebrowser.service
 systemctl enable filebrowser
 systemctl start filebrowser
 echo "=================================================================================="
-echo "Installing and Enabling SimpNAS Service during Startup..."
+echo "Installing and Enabling easynas Service during Startup..."
 echo "=================================================================================="
-cp /simpnas/conf/simpnas.service /etc/systemd/system/
-chmod 755 /etc/systemd/system/simpnas.service
-systemctl enable simpnas
-systemctl start simpnas
+cp /easynas/conf/easynas.service /etc/systemd/system/
+chmod 755 /etc/systemd/system/easynas.service
+systemctl enable easynas
+systemctl start easynas
 IP="$(ip addr show | grep -E '^\s*inet' | grep -m1 global | awk '{ print $2 }' | sed 's|/.*||')";
 HOSTNAME="$(hostname)";
 echo "==============================================================================================================================="

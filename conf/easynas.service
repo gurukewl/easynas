@@ -1,12 +1,13 @@
 [Unit]
-Description=File Browser
+Description=EasyNAS Web UI
 After=network.target
 
 [Service]
 Type=simple
+# Another Type: forking
 User=root
-WorkingDirectory=/usr/local/etc
-ExecStart=/usr/local/bin/filebrowser -r /volumes -p 998 -a 0.0.0.0
+WorkingDirectory=/easynas
+ExecStart=/usr/bin/php -t /easynas -S 0.0.0.0:999
 Restart=on-failure
 # Other restart options: always, on-abort, etc
 
