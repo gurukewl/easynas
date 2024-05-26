@@ -23,12 +23,8 @@ DEBIAN_FRONTEND=noninteractive \apt install samba rsync php-cgi git mdadm crypts
 echo "================================================================================="
 echo "Install Docker Repo"
 echo "================================================================================="
-curl -fsSL https://download.docker.com/linux/$(lsb_release -s -i | tr '[:upper:]' '[:lower:]')/gpg | apt-key add -
-add-apt-repository "deb [arch=$(dpkg --print-architecture)] https://download.docker.com/linux/$(lsb_release -s -i | tr '[:upper:]' '[:lower:]') $(lsb_release -cs) stable"
-#Check to see if its a standard Debian install or Armbian if its Debian then add the backports REPO as this repo is already added on Armbian by default.
-if [ ! -f /etc/armbian-release ]; then
-  add-apt-repository "deb http://deb.debian.org/debian buster-backports main contrib non-free"
-fi
+curl -fsSL https://get.docker.com -o get-docker.sh
+sh get-docker.sh
 apt update
 echo "=================================================================================="
 echo "Installing Backport version of SMARTmonTools"
