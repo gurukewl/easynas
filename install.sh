@@ -19,7 +19,7 @@ echo "==========================================================================
 echo "Installing Additional Required Packages..."
 echo "Samba, PHP, Rsync, mdadm (RAID), cryptsetup (LUKS Encryption) etc"
 echo "=================================================================================="
-DEBIAN_FRONTEND=noninteractive \apt install samba rsync php-cgi git mdadm cryptsetup apt-transport-https curl gnupg-agent software-properties-common dnsutils rclone avahi-daemon-y
+DEBIAN_FRONTEND=noninteractive \apt install samba rsync php-cgi git mdadm cryptsetup apt-transport-https curl gnupg-agent software-properties-common dnsutils rclone -y
 echo "================================================================================="
 echo "Install Docker Repo"
 echo "================================================================================="
@@ -30,13 +30,7 @@ echo "==========================================================================
 echo "Installing Backport version of SMARTmonTools"
 echo "=================================================================================="
 DEBIAN_FRONTEND=noninteractive \apt -t buster-backports install smartmontools -y
-echo "================================================================================="
-apt install docker-ce docker-ce-cli containerd.io -y
-apt install docker.io -y
-#echo "=================================================================================="
-#echo "Creating docker network"
-#echo "=================================================================================="
-#docker network create my-network
+echo "=================================================================================="
 echo "=================================================================================="
 echo "Adding group admins and adding the group to the sudoers allow list                "
 echo "=================================================================================="
