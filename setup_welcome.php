@@ -11,9 +11,9 @@
 	  </ol>
 	</nav>
   
-  <h2>Welcome to SimpNAS</h2>
+  <h2>Welcome to EasyNAS</h2>
   <hr>
-  Thank you for choosing SimpNAS to be your new Storage Vault. Before continuing please read the following
+  Thank you for choosing EasyNAS to be your new Storage Vault. Before continuing please read the following
   <ul>
   	<li>Any Storage Device Attached may possibly be wiped, please backup your data before continuing.</li>
   	<li>Any user that was created initially will be deleted, they can be recreated in the webUI.</li>

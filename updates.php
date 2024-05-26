@@ -12,9 +12,9 @@
     $current_version = exec("git rev-parse HEAD");
 
     if($current_version == $latest_version){
-      $simpnas_update = "No Updates for SimpNAS!";
+      $easynas_update = "No Updates for EasyNAS!";
     }else{
-      $simpnas_update = "New SimpNAS update Available [$latest_version]";
+      $easynas_update = "New EasyNAS update Available [$latest_version]";
     }
 
     $git_log = shell_exec("git log master..origin/master --pretty=format:'<tr><td>%h</td><td>%ar</td><td>%s</td></tr>'");
@@ -45,7 +45,7 @@
     <?php
     if(!empty($git_log)){
     ?>
-    <a href="post.php?upgrade_simpnas_overwrite_local_changes" class="btn btn-outline-secondary" onclick="$('#cover-spin').show(0)">Upgrade SimpNAS</a>
+    <a href="post.php?upgrade_easynas_overwrite_local_changes" class="btn btn-outline-secondary" onclick="$('#cover-spin').show(0)">Upgrade EasyNAS</a>
     <?php
     }
     ?>

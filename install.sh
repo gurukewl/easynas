@@ -19,18 +19,13 @@ echo "==========================================================================
 echo "Installing Additional Required Packages..."
 echo "Samba, PHP, Rsync, mdadm (RAID), cryptsetup (LUKS Encryption) etc"
 echo "=================================================================================="
-DEBIAN_FRONTEND=noninteractive \apt install samba rsync php-cgi git mdadm cryptsetup apt-transport-https curl gnupg-agent software-properties-common dnsutils rclone -y
+DEBIAN_FRONTEND=noninteractive \apt install samba rsync php-cgi git mdadm smartmontools cryptsetup apt-transport-https curl gnupg-agent software-properties-common dnsutils rclone -y
 echo "================================================================================="
 echo "Install Docker Repo"
 echo "================================================================================="
 curl -fsSL https://get.docker.com -o get-docker.sh
 sh get-docker.sh
 apt update
-echo "=================================================================================="
-echo "Installing Backport version of SMARTmonTools"
-echo "=================================================================================="
-DEBIAN_FRONTEND=noninteractive \apt -t buster-backports install smartmontools -y
-echo "=================================================================================="
 echo "=================================================================================="
 echo "Adding group admins and adding the group to the sudoers allow list                "
 echo "=================================================================================="
@@ -42,7 +37,7 @@ echo "==========================================================================
 sed -i 's/prohibit-password/yes/' /etc/ssh/sshd_config
 cd /
 echo "=================================================================================="
-echo "Downloading the Latest easynas from GIT repo..."
+echo "Downloading the latest easynas from GIT repo..."
 echo "=================================================================================="
 git clone https://github.com/gurukewl/easynas.git
 echo "=================================================================================="
