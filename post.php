@@ -232,7 +232,7 @@ if(isset($_POST['settings_hostname'])){
   $_SESSION['alert_type'] = "info";
   $_SESSION['alert_message'] = "Updated hostname successfully!";
 
-  header("Location: http://$config_primary_ip:81/network.php");
+  header("Location: http://$config_primary_ip:/network.php");
 }
 
 if(isset($_POST['datetime_update'])){
@@ -697,7 +697,7 @@ if(isset($_POST['network_add'])){
     fwrite($fh, $stringData);
     fclose($fh);
     exec("systemctl restart systemd-networkd");
-    echo "<script>window.location = 'http://$config_hostname:81/network.php'</script>";
+    echo "<script>window.location = 'http://$config_hostname:999/network.php'</script>";
   }
   if($method == 'Static'){
     $myFile = "/etc/systemd/network/$interface.network";
@@ -706,7 +706,7 @@ if(isset($_POST['network_add'])){
     fwrite($fh, $stringData);
     fclose($fh);
     exec("systemctl restart systemd-networkd");
-    echo "<script>window.location = 'http://$address:81/network.php'</script>";
+    echo "<script>window.location = 'http://$address:999/network.php'</script>";
   }
   
 }
@@ -1419,7 +1419,7 @@ if(isset($_GET['install_nginx-proxy-manager'])){
 
     mkdir("/volumes/$config_docker_volume/docker/nginx-proxy-manager");
 
-    exec("docker run -d --name nginx-proxy-manager -p 80:8080 -p 83:8181 -p 443:4443 -v /volumes/$config_docker_volume/docker/nginx-proxy-manager:/config --restart=unless-stopped jlesage/nginx-proxy-manager");
+    exec("docker run -d --name nginx-proxy-manager -p 80:8080 -p 83:99981 -p 443:4443 -v /volumes/$config_docker_volume/docker/nginx-proxy-manager:/config --restart=unless-stopped jlesage/nginx-proxy-manager");
   }
 
   header("Location: apps.php");
@@ -1433,7 +1433,7 @@ if(isset($_GET['update_nginx-proxy-manager'])){
   exec("docker stop nginx-proxy-manager");
   exec("docker rm nginx-proxy-manager");
 
-  exec("docker run -d --name nginx-proxy-manager -p 80:8080 -p 83:8181 -p 443:4443 -v $docker_path:/config --restart=unless-stopped jlesage/nginx-proxy-manager");
+  exec("docker run -d --name nginx-proxy-manager -p 80:8080 -p 83:99981 -p 443:4443 -v $docker_path:/config --restart=unless-stopped jlesage/nginx-proxy-manager");
 
   exec("docker image prune");
   
@@ -1466,7 +1466,7 @@ if(isset($_GET['install_homeassistant'])){
 
     mkdir("/volumes/$config_docker_volume/docker/homeassistant");
 
-    exec("docker run -d --name homeassistant --restart=unless-stopped -p 8123:8123 -v /volumes/$config_docker_volume/docker/homeassistant:/config homeassistant/home-assistant:stable");
+    exec("docker run -d --name homeassistant --restart=unless-stopped -p 8123:99923 -v /volumes/$config_docker_volume/docker/homeassistant:/config homeassistant/home-assistant:stable");
   }
 
   header("Location: apps.php");
@@ -1480,7 +1480,7 @@ if(isset($_GET['update_homeassistant'])){
   exec("docker stop homeassistant");
   exec("docker rm homeassistant");
 
-  exec("docker run -d --name homeassistant --restart=unless-stopped -p 8123:8123 -v $docker_path:/config homeassistant/home-assistant:stable");
+  exec("docker run -d --name homeassistant --restart=unless-stopped -p 8123:99923 -v $docker_path:/config homeassistant/home-assistant:stable");
 
   exec("docker image prune");
   
@@ -1800,7 +1800,7 @@ if(isset($_POST['setup_network'])){
     exec("echo '127.0.0.1      localhost' > /etc/hosts");
     exec("echo '127.0.0.2     $hostname' >> /etc/hosts");
     //exec("systemctl restart systemd-networkd > /dev/null &");
-    echo "<script>window.location = 'http://$primary_ip:81/setup_volume.php'</script>";
+    echo "<script>window.location = 'http://$primary_ip:999/setup_volume.php'</script>";
   }
   
   if($method == 'Static'){
@@ -1812,7 +1812,7 @@ if(isset($_POST['setup_network'])){
     exec("echo '127.0.0.1      localhost' > /etc/hosts");
     exec("echo '$address     $hostname' >> /etc/hosts");
     exec("systemctl restart systemd-networkd > /dev/null &");
-    echo "<script>window.location = 'http://$address:81/setup_volume.php'</script>";
+    echo "<script>window.location = 'http://$address:999/setup_volume.php'</script>";
   }
 }
 
