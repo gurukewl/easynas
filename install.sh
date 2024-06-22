@@ -71,7 +71,7 @@ systemctl start easynas
 IP="$(ip addr show | grep -E '^\s*inet' | grep -m1 global | awk '{ print $2 }' | sed 's|/.*||')";
 HOSTNAME="$(hostname)";
 chmod 755 /easynas/motd.sh
-sed -i '/easynas/motd.sh' ~/.profile
+sed -i '/easynas/motd.sh' /.profile
 echo "==============================================================================================================================="
 echo "                                                   Almost There!																                               "
 echo "             Visit http://$IP:999 in your web browser to complete installation								 	                                 "
