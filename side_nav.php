@@ -9,7 +9,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="http://<?php echo $config_primary_ip; ?>:82" otarget="_blank">
+        <a class="nav-link" href="http://<?php echo $config_primary_ip; ?>:998" otarget="_blank">
           <span data-feather="file"></span>
           File Manager
         </a>

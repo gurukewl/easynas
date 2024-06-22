@@ -71,5 +71,5 @@ IP="$(ip addr show | grep -E '^\s*inet' | grep -m1 global | awk '{ print $2 }' |
 HOSTNAME="$(hostname)";
 echo "==============================================================================================================================="
 echo "                                                   Almost There!																                               "
-echo "             Visit http://$IP:81 in your web browser to complete installation								 	                                 "
+echo "             Visit http://$IP:999 in your web browser to complete installation								 	                                 "
 echo "==============================================================================================================================="
