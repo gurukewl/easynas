@@ -60,6 +60,7 @@ cp /easynas/conf/filebrowser.service /etc/systemd/system/
 chmod 755 /etc/systemd/system/filebrowser.service
 systemctl enable filebrowser
 systemctl start filebrowser
+cd /
 echo "=================================================================================="
 echo "Installing and Enabling easynas Service during Startup..."
 echo "=================================================================================="
