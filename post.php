@@ -2008,7 +2008,5 @@ if(isset($_POST['setup_final'])){
   header("Location: restart.php");
 
   //header("Location: login.php");
-
-}
-
+  
 ?>
