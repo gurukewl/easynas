@@ -4,9 +4,6 @@ Manage your hard drives, volumes, network shares, users, groups through an excel
 ## Installation
 
 * Install Debian 10
-* Copy and paste the line below into terminal
-
-`wget https://simpnas.com/install.sh; bash install.sh`
 
 ## Notes
 
