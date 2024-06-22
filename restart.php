@@ -19,7 +19,7 @@
 <script type="text/javascript">
     
   // Total seconds to wait
-  var seconds = 90;
+  var seconds = 60;
   
   function countdown() {
     seconds = seconds - 1;
