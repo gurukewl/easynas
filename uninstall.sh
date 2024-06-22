@@ -30,6 +30,7 @@ echo "==========================================================================
 systemctl stop easynas
 systemctl disable --now easynas
 rm /etc/systemd/system/easynas.service
+shutdown -r +1
 echo "==============================================================================================================================="
-echo "             EasyNAS unistallation complete. Reboot Now.								 	                                 "
+echo "             EasyNAS unistallation complete. System will reboot in 1 minute.....								 	                                 "
 echo "==============================================================================================================================="
