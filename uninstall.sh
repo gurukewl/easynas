@@ -6,7 +6,7 @@ DEBIAN_FRONTEND=noninteractive \apt purge samba rsync php-cgi git mdadm smartmon
 echo "================================================================================="
 echo "Uninstall Docker"
 echo "================================================================================="
-apt-get purge docker-ce -y
+apt-get remove docker-ce -y
 rm -rf /var/lib/docker 
 apt autoremove -y
 echo "=================================================================================="
