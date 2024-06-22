@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SimpNAS</title>
+    <title>EasyNAS</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" type="text/css" href="plugins/bootstrap/css/bootstrap.min.css">
@@ -22,7 +22,7 @@
 
   <body>
     <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-      <div class="navbar-brand col-sm-3 col-md-2 mr-0"><span data-feather="box"></span> SimpNAS <small>(<?php echo gethostname(); ?>)</small></div>
+      <div class="navbar-brand col-sm-3 col-md-2 mr-0"><span data-feather="box"></span> EasyNAS <small>(<?php echo gethostname(); ?>)</small></div>
       <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
         </li>

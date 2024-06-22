@@ -11,7 +11,7 @@
 
   exec("ls /volumes", $volume_array);
 
-  $simpnas_version = exec("git rev-parse --short HEAD");
+  $easynas = exec("git rev-parse --short HEAD");
 
   $free_memory = exec("free | grep Mem | awk '{print $3/$2 * 100.0}'");
   $free_memory = floor($free_memory);
@@ -95,8 +95,8 @@
         </tr>
 
         <tr>
-          <td>SimpNAS Version</td>
-          <td><?php echo $simpnas_version; ?></td>
+          <td>EasyNAS Version</td>
+          <td><?php echo $easynas_version; ?></td>
         </tr>
 
         <tr>

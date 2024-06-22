@@ -16,7 +16,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SimpNAS | Setup</title>
+    <title>EasyNAS | Setup</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" type="text/css" href="plugins/bootstrap/css/bootstrap.min.css" >

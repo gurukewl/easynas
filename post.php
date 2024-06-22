@@ -6,15 +6,15 @@ $config = include("config.php");
 include("simple_vars.php");
 include("functions.php");
 
-if(isset($_GET['upgrade_simpnas'])){
-  exec("cd /simpnas");
+if(isset($_GET['upgrade_easynas'])){
+  exec("cd /easynas");
   exec("git pull origin master");
   include("post_upgrade.php");
   header("Location: index.php");
 }
 
-if(isset($_GET['upgrade_simpnas_overwrite_local_changes'])){
-  exec("cd /simpnas");
+if(isset($_GET['upgrade_easynas_overwrite_local_changes'])){
+  exec("cd /easynas");
   
   //git fetch downloads the latest from remote without trying to merge or rebase anything. Then the git reset resets the master branch to what you just fetched. The --hard option changes all the files in your working tree to match the files in origin/master
 
@@ -822,7 +822,7 @@ if(isset($_POST['settings_notifications'])){
   $config['mail_to'] = $_POST['mail_to'];
   $enable_system_report = $_POST['enable_system_report'];
   if($enable_system_report == 1){
-    exec("echo 'php /simpnas/mail_system_report.php' > /etc/cron.daily/system-report");
+    exec("echo 'php /easynas/mail_system_report.php' > /etc/cron.daily/system-report");
     exec("chmod 755 /etc/cron.daily/system-report");
   }else{
     exec("rm -f /etc/cron.daily/system-report");
@@ -2001,8 +2001,8 @@ if(isset($_POST['setup_final'])){
   //exec("apt install docker-ce docker-ce-cli containerd.io -y");
   //exec("apt install docker.io -y");
 
-  if($collect = 1){
-    exec("curl https://simpnas.com/collect.php?'collect&machine_id='$(cat /etc/machine-id)''");
+  // if($collect = 1){
+  //   exec("curl https://easynas.com/collect.php?'collect&machine_id='$(cat /etc/machine-id)''");
   }
 
   header("Location: restart.php");

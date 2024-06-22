@@ -39,7 +39,7 @@ $session_username = $_SESSION['username'];
 
   <body>
     <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-      <div class="navbar-brand col-md-3 col-lg-2 mr-0 px-3"><span data-feather="box"></span> SimpNAS <small>(<?php echo gethostname(); ?>)</small></div>
+      <div class="navbar-brand col-md-3 col-lg-2 mr-0 px-3"><span data-feather="box"></span> EasyNAS <small>(<?php echo gethostname(); ?>)</small></div>
       <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu">
         <span class="navbar-toggler-icon"></span>
       </button>

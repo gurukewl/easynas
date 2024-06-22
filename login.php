@@ -10,7 +10,7 @@ if(isset($_POST['login'])){
   $username = $_POST['username'];
   $password = $_POST['password'];
 
-  $logged_in = exec("bash /simpnas/verify.sh $username $password");
+  $logged_in = exec("bash /easynas/verify.sh $username $password");
 
   if($logged_in == 1){
     $_SESSION['username'] = $username;
@@ -48,7 +48,7 @@ if(isset($_POST['login'])){
 
   <body class="text-center">
     <form class="form-signin" method="post">
-      <h1 class="mb-3"><i class="fa fa-cube"></i> SimpNAS<br><small class="text-secondary"><?php echo gethostname(); ?></small></h1>
+      <h1 class="mb-3"><i class="fa fa-cube"></i> EasyNAS<br><small class="text-secondary"><?php echo gethostname(); ?></small></h1>
       <div id ="alert">
         <?php 
         if(!empty($response)){

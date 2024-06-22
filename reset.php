@@ -9,7 +9,7 @@
 <main class="col-md-12 pt-5">
 
   <center>
-  	<h1 class="text-danger">Deleting all Data, Configuration and Resetting SimpNAS back to Factory Defaults!</h1>
+  	<h1 class="text-danger">Deleting all Data, Configuration and Resetting EasyNAS back to Factory Defaults!</h1>
   	<h3>Redirecting to setup page in <span id="countdown">45</span> seconds</h3>
   </center>
 
@@ -86,9 +86,9 @@
   exec ("rm -f /etc/samba/smb.conf");
   exec ("rm -f /etc/samba/shares.conf");
   exec ("rm -f /etc/samba/shares/*");
-  exec ("cp /simpnas/conf/smb.conf /etc/samba/");
+  exec ("cp /easynas/conf/smb.conf /etc/samba/");
   exec ("touch /etc/samba/shares.conf");
-  exec ("rm -f /simpnas/config.php");
+  exec ("rm -f /easynas/config.php");
 
   exec("sleep 1 && reboot > /dev/null &");
 
